@@ -14,3 +14,14 @@ data:
       username: eks-admin
       groups:
         - system:masters
+mapUsers: |
+    - userarn: arn:aws:iam::886436961042:role/eks-admin-role
+      role: eks-admin
+      groups:
+        - system:masters
+mapUsers: |
+    - userarn: arn:aws:iam::886436961042:role/EKSAdminRole
+      role: EKSAdminRole
+      groups:
+        - system:masters
+
