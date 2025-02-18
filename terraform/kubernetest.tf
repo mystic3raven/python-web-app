@@ -105,21 +105,7 @@ resource "kubernetes_config_map" "python_web_config" {
 }
 
 # EKS IAM Role for Authentication
-resource "kubernetes_config_map" "aws_auth" {
-  metadata {
-    name      = "aws-auth"
-    namespace = "kube-system"
-  }
 
-  data = {
-    mapRoles = <<YAML
-      - rolearn: arn:aws:iam::886436961042:role/EKSAdminRole
-        username: eks-admin
-        groups:
-          - system:masters
-    YAML
-  }
-}
 
 # Kubernetes RBAC for GitHub Actions OIDC
 resource "kubernetes_cluster_role_binding" "github_actions_rbac" {
